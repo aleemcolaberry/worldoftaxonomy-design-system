@@ -1,0 +1,219 @@
+/* Base — common to every variant. */
+.btn {
+  --btn-h: 32px;
+  --btn-px: 16px;
+  --btn-fs: 14px;
+  --btn-radius: var(--radius-md);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: var(--btn-h);
+  padding: 0 var(--btn-px);
+  border-radius: var(--btn-radius);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--btn-fs);
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0.5px);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  color: var(--color-text-quaternary);
+  background: var(--color-zinc-100);
+  border-color: var(--color-zinc-200);
+  box-shadow: none;
+}
+
+/* Sizes ───────────────────────────────────────────── */
+.s-sm { --btn-h: 24px; --btn-px: 8px;  --btn-fs: 12px; --btn-radius: var(--radius-sm); }
+.s-md { --btn-h: 32px; --btn-px: 16px; --btn-fs: 14px; --btn-radius: var(--radius-md); }
+.s-lg { --btn-h: 40px; --btn-px: 16px; --btn-fs: 16px; --btn-radius: var(--radius-lg); }
+
+/* Block ───────────────────────────────────────────── */
+.block { display: flex; width: 100%; }
+
+/* Icon-only ───────────────────────────────────────── */
+.iconOnly {
+  padding: 0;
+  aspect-ratio: 1 / 1;
+}
+.iconOnly.s-sm { width: 24px; }
+.iconOnly.s-md { width: 32px; }
+.iconOnly.s-lg { width: 40px; }
+
+/* Shapes ──────────────────────────────────────────── */
+.shape-round { border-radius: 9999px; }
+.shape-circle {
+  border-radius: 9999px;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+}
+.shape-circle.s-sm { width: 24px; }
+.shape-circle.s-md { width: 32px; }
+.shape-circle.s-lg { width: 40px; }
+
+/* Primary ─────────────────────────────────────────── */
+.v-primary {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+.v-primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+.v-primary:active:not(:disabled) {
+  background: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+}
+.v-primary.danger {
+  background: var(--color-error);
+  border-color: var(--color-error);
+}
+.v-primary.danger:hover:not(:disabled) {
+  background: var(--color-error-hover);
+  border-color: var(--color-error-hover);
+}
+.v-primary.danger:active:not(:disabled) {
+  background: var(--color-error-active);
+  border-color: var(--color-error-active);
+}
+
+/* Default ─────────────────────────────────────────── */
+.v-default {
+  background: var(--color-bg-container);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+.v-default:hover:not(:disabled) {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.v-default:active:not(:disabled) {
+  color: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+}
+.v-default.danger {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+.v-default.danger:hover:not(:disabled) {
+  color: var(--color-error-hover);
+  border-color: var(--color-error-hover);
+}
+.v-default.danger:active:not(:disabled) {
+  color: var(--color-error-active);
+  border-color: var(--color-error-active);
+}
+
+/* Dashed ─────────────────────────────────────────── */
+.v-dashed {
+  background: var(--color-bg-container);
+  color: var(--color-text);
+  border-color: var(--color-border);
+  border-style: dashed;
+}
+.v-dashed:hover:not(:disabled) {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.v-dashed:active:not(:disabled) {
+  color: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+}
+.v-dashed.danger {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+.v-dashed.danger:hover:not(:disabled) {
+  color: var(--color-error-hover);
+  border-color: var(--color-error-hover);
+}
+
+/* Text ───────────────────────────────────────────── */
+.v-text {
+  background: transparent;
+  color: var(--color-text);
+  border-color: transparent;
+}
+.v-text:hover:not(:disabled) {
+  background: var(--color-fill-tertiary);
+}
+.v-text:active:not(:disabled) {
+  background: var(--color-fill-secondary);
+}
+.v-text:disabled {
+  background: transparent;
+  border-color: transparent;
+}
+.v-text.danger {
+  color: var(--color-error);
+}
+.v-text.danger:hover:not(:disabled) {
+  background: var(--color-error-bg);
+}
+
+/* Link ───────────────────────────────────────────── */
+.v-link {
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-link);
+  padding: 0 4px;
+}
+.v-link:hover:not(:disabled) {
+  color: var(--color-link-hover);
+  background: transparent;
+}
+.v-link:active:not(:disabled) {
+  color: var(--color-link-active);
+}
+.v-link:disabled {
+  background: transparent;
+  border-color: transparent;
+}
+.v-link.danger {
+  color: var(--color-error);
+}
+.v-link.danger:hover:not(:disabled) {
+  color: var(--color-error-hover);
+}
+
+/* Loading ────────────────────────────────────────── */
+.loading {
+  pointer-events: none;
+}
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: btn-spin 0.7s linear infinite;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+.label { display: inline-flex; align-items: center; gap: 6px; }

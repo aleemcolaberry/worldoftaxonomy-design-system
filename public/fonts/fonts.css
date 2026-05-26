@@ -1,0 +1,78 @@
+/* ──────────────────────────────────────────────────────────────────
+   WoT AI — Geist font faces
+   Drop this folder (assets/fonts/) into your project's /public dir
+   and import this file once: `import "@/public/fonts/fonts.css"`
+   or link it from your HTML <head>.
+
+   Geist is OFL-1.1 licensed (see OFL.txt). Free for commercial use.
+   ────────────────────────────────────────────────────────────────── */
+
+/* Variable fonts — preferred. One file covers weights 100–900. */
+@font-face {
+  font-family: "Geist";
+  src: url("./Geist-Variable.woff2") format("woff2-variations"),
+       url("./Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./GeistMono-Variable.woff2") format("woff2-variations"),
+       url("./GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Static fallbacks — for browsers that don't support woff2-variations.
+   Only the weights we actually use in the system are included. */
+@font-face {
+  font-family: "Geist";
+  src: url("./Geist-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("./Geist-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("./Geist-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("./Geist-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./GeistMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./GeistMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Convenience CSS variables. Use --font-sans / --font-mono in your
+   :root or @theme to wire Tailwind's font-sans / font-mono. */
+:root {
+  --font-sans: "Geist", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+}

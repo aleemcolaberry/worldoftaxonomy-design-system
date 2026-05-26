@@ -1,0 +1,49 @@
+.group {
+  display: inline-flex;
+}
+
+.horizontal { flex-direction: row; }
+.vertical { flex-direction: column; align-items: stretch; }
+
+/* Default (non-compact): children get their own spacing */
+.group:not(.compact) { gap: 8px; }
+
+/* Compact horizontal — flatten internal borders into a single hairline. */
+.compact.horizontal > :global(button):not(:first-child) {
+  margin-left: -1px;
+}
+.compact.horizontal > :global(button):not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.compact.horizontal > :global(button):first-child:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.compact.horizontal > :global(button):last-child:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.compact.horizontal > :global(button):hover,
+.compact.horizontal > :global(button):focus-visible {
+  z-index: 1;
+}
+
+/* Compact vertical — same idea, stacked. */
+.compact.vertical > :global(button):not(:first-child) {
+  margin-top: -1px;
+}
+.compact.vertical > :global(button):not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.compact.vertical > :global(button):first-child:not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.compact.vertical > :global(button):last-child:not(:first-child) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.compact.vertical > :global(button):hover,
+.compact.vertical > :global(button):focus-visible {
+  z-index: 1;
+}

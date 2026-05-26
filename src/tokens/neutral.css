@@ -1,0 +1,37 @@
+/* Neutral semantic colors — built from the Zinc scale.
+   Light mode is the default; dark surfaces use Zinc 950 (--color-zinc-950). */
+:root {
+  /* Text */
+  --color-text: var(--color-zinc-900);          /* #18181b */
+  --color-text-secondary: var(--color-zinc-700); /* #3f3f46 */
+  --color-text-tertiary: var(--color-zinc-500);  /* #71717a */
+  --color-text-quaternary: var(--color-zinc-400); /* #a1a1aa */
+  --color-text-heading: var(--color-zinc-950);   /* #09090b */
+  --color-text-inverse: var(--color-zinc-50);
+
+  /* Icon */
+  --color-icon: var(--color-zinc-500);
+  --color-icon-hover: var(--color-zinc-900);
+
+  /* Background */
+  --color-bg-base: #ffffff;
+  --color-bg-container: #ffffff;
+  --color-bg-elevated: #ffffff;
+  --color-bg-layout: var(--color-zinc-50);       /* #fafafa */
+  --color-bg-subtle: var(--color-zinc-100);      /* #f4f4f5 */
+  --color-bg-dark: var(--color-zinc-950);        /* #09090b — brand dark */
+  --color-bg-mask: rgba(9, 9, 11, 0.45);
+  --color-bg-spotlight: var(--color-zinc-900);
+
+  /* Border */
+  --color-border: var(--color-zinc-200);         /* #e4e4e7 */
+  --color-border-secondary: var(--color-zinc-100); /* #f4f4f5 */
+  --color-split: var(--color-zinc-200);
+
+  /* Fill */
+  --color-fill: var(--color-zinc-300);
+  --color-fill-secondary: var(--color-zinc-200);
+  --color-fill-tertiary: var(--color-zinc-100);
+  --color-fill-quaternary: var(--color-zinc-50);
+  --color-fill-alter: var(--color-zinc-50);
+}

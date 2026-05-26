@@ -1,0 +1,73 @@
+/* Brand semantic colors — Cyan primary, plus muted functional states.
+   Per BRAND.md, Cyan is the only brand colour. Success/warning/error
+   are functional only and use neutral-leaning scales. */
+:root {
+  /* ── Primary — Cyan 500 base */
+  --color-primary-bg: var(--color-cyan-50);
+  --color-primary-bg-hover: var(--color-cyan-100);
+  --color-primary-border: var(--color-cyan-200);
+  --color-primary-border-hover: var(--color-cyan-300);
+  --color-primary-hover: var(--color-cyan-400);
+  --color-primary: var(--color-cyan-500);          /* #06b6d4 brand */
+  --color-primary-active: var(--color-cyan-700);
+  --color-primary-text: var(--color-cyan-600);     /* tuned for AA contrast on white */
+  --color-primary-text-hover: var(--color-cyan-500);
+  --color-primary-text-active: var(--color-cyan-700);
+
+  /* ── Success — Emerald 500 base */
+  --color-success-bg: var(--color-emerald-50);
+  --color-success-bg-hover: var(--color-emerald-100);
+  --color-success-border: var(--color-emerald-200);
+  --color-success-border-hover: var(--color-emerald-300);
+  --color-success-hover: var(--color-emerald-400);
+  --color-success: var(--color-emerald-500);
+  --color-success-active: var(--color-emerald-700);
+  --color-success-text: var(--color-emerald-600);
+  --color-success-text-hover: var(--color-emerald-500);
+  --color-success-text-active: var(--color-emerald-700);
+
+  /* ── Warning — Amber 500 base */
+  --color-warning-bg: var(--color-amber-50);
+  --color-warning-bg-hover: var(--color-amber-100);
+  --color-warning-border: var(--color-amber-200);
+  --color-warning-border-hover: var(--color-amber-300);
+  --color-warning-hover: var(--color-amber-400);
+  --color-warning: var(--color-amber-500);
+  --color-warning-active: var(--color-amber-700);
+  --color-warning-text: var(--color-amber-700);
+  --color-warning-text-hover: var(--color-amber-600);
+  --color-warning-text-active: var(--color-amber-800);
+
+  /* ── Info — alias of Primary */
+  --color-info-bg: var(--color-cyan-50);
+  --color-info-bg-hover: var(--color-cyan-100);
+  --color-info-border: var(--color-cyan-200);
+  --color-info-border-hover: var(--color-cyan-300);
+  --color-info-hover: var(--color-cyan-400);
+  --color-info: var(--color-cyan-500);
+  --color-info-active: var(--color-cyan-700);
+  --color-info-text: var(--color-cyan-600);
+  --color-info-text-hover: var(--color-cyan-500);
+  --color-info-text-active: var(--color-cyan-700);
+
+  /* ── Error — Red 500 base */
+  --color-error-bg: var(--color-red-50);
+  --color-error-bg-hover: var(--color-red-100);
+  --color-error-border: var(--color-red-200);
+  --color-error-border-hover: var(--color-red-300);
+  --color-error-hover: var(--color-red-400);
+  --color-error: var(--color-red-500);
+  --color-error-active: var(--color-red-700);
+  --color-error-text: var(--color-red-600);
+  --color-error-text-hover: var(--color-red-500);
+  --color-error-text-active: var(--color-red-700);
+
+  /* ── Link — alias of Primary */
+  --color-link: var(--color-cyan-600);
+  --color-link-hover: var(--color-cyan-500);
+  --color-link-active: var(--color-cyan-700);
+
+  /* Focus ring — uses brand cyan for visibility on any surface. */
+  --color-focus-ring: var(--color-cyan-500);
+  --shadow-focus: 0 0 0 3px rgba(6, 182, 212, 0.35);
+}

@@ -1,0 +1,44 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build output
+dist
+dist-ssr
+*.local
+
+# Editor/OS
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript incremental cache
+*.tsbuildinfo
+
+# Working folders — original brand archive and .fig extract.
+# Kept on disk for reference but excluded from the published repo.
+_brand-source/
+source-fig/
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Claude Code local machine settings (project-shared settings.json is OK to commit)
+.claude/settings.local.json

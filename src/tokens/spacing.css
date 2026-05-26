@@ -1,0 +1,23 @@
+/* Spacing tokens — for padding, margin, gap. */
+:root {
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-xxl: 32px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+
+  /* Aliases used by tables/components */
+  --margin-xxs: 4px;
+  --margin-xs: 8px;
+  --margin-sm: 12px;
+  --margin-md: 16px;
+  --padding-xxs: 4px;
+  --padding-xs: 8px;
+  --padding-sm: 12px;
+  --padding-md: 16px;
+  --padding-lg: 24px;
+}

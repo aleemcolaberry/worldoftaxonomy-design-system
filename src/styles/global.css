@@ -1,0 +1,47 @@
+/* Reset + base styles. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font: var(--font-base-normal);
+  color: var(--color-text);
+  background: var(--color-bg-layout);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  color: var(--color-text-heading);
+}
+
+h1 { font: var(--font-heading-1); }
+h2 { font: var(--font-heading-2); }
+h3 { font: var(--font-heading-3); }
+h4 { font: var(--font-heading-4); }
+h5 { font: var(--font-heading-5); }
+
+p {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}

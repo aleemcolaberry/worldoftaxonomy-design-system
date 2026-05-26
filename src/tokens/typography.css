@@ -1,0 +1,64 @@
+/* Typography tokens — Geist Sans + Geist Mono.
+   Font files load via /public/fonts/fonts.css linked from index.html. */
+:root {
+  --font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'Geist Mono', 'JetBrains Mono', ui-monospace, 'SF Mono',
+    'Menlo', 'Consolas', monospace;
+
+  /* Sizes */
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-h5: 16px;
+  --font-size-h4: 20px;
+  --font-size-h3: 24px;
+  --font-size-h2: 30px;
+  --font-size-h1: 38px;
+
+  /* Line heights */
+  --line-height-sm: 20px;
+  --line-height-base: 22px;
+  --line-height-lg: 24px;
+  --line-height-xl: 28px;
+  --line-height-h5: 24px;
+  --line-height-h4: 28px;
+  --line-height-h3: 32px;
+  --line-height-h2: 38px;
+  --line-height-h1: 46px;
+
+  /* Weights — Geist supports 400 / 500 / 600 / 700 */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Composite font shorthands. Geist renders well at 500 for emphasis,
+     so we keep 600 for stronger weight to align with previous ramp. */
+  --font-base-normal: 400 14px/22px var(--font-family);
+  --font-base-strong: 600 14px/22px var(--font-family);
+  --font-base-italic: italic 400 14px/22px var(--font-family);
+
+  --font-sm-normal: 400 12px/20px var(--font-family);
+  --font-sm-strong: 600 12px/20px var(--font-family);
+  --font-sm-italic: italic 400 12px/20px var(--font-family);
+
+  --font-lg-normal: 400 16px/24px var(--font-family);
+  --font-lg-strong: 600 16px/24px var(--font-family);
+  --font-lg-italic: italic 400 16px/24px var(--font-family);
+
+  --font-xl-normal: 400 20px/28px var(--font-family);
+  --font-xl-strong: 600 20px/28px var(--font-family);
+  --font-xl-italic: italic 400 20px/28px var(--font-family);
+
+  --font-heading-1: 600 38px/46px var(--font-family);
+  --font-heading-2: 600 30px/38px var(--font-family);
+  --font-heading-3: 600 24px/32px var(--font-family);
+  --font-heading-4: 600 20px/28px var(--font-family);
+  --font-heading-5: 600 16px/24px var(--font-family);
+
+  /* Wordmark style — Geist Medium, wide tracking, per BRAND.md. */
+  --font-wordmark: 500 16px/1 var(--font-family);
+  --wordmark-tracking: 0.2em;
+}

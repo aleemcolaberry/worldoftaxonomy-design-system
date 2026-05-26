@@ -1,0 +1,67 @@
+.section {
+  margin-top: 48px;
+}
+
+.title {
+  margin: 0 0 16px;
+  font: var(--font-heading-4);
+  color: var(--color-text-heading);
+}
+
+.table {
+  width: 100%;
+  background: var(--color-bg-container);
+  border: 1px solid var(--color-split);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font: var(--font-base-normal);
+}
+
+.table thead {
+  background: var(--color-fill-alter);
+}
+
+.table th {
+  text-align: left;
+  padding: 16px;
+  font: var(--font-base-strong);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-split);
+}
+
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--color-split);
+  vertical-align: middle;
+  color: var(--color-text);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.step {
+  font: var(--font-base-strong);
+  width: 64px;
+}
+
+.varName {
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.value {
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  color: var(--color-text);
+  width: 140px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-split);
+}

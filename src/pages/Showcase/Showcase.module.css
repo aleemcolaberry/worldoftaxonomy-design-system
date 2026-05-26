@@ -1,0 +1,338 @@
+.main {
+  background: var(--color-bg-container);
+  padding: 64px 120px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Left ─────────────────────────────────────────────── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 24px;
+}
+
+.headline {
+  font: var(--font-heading-1);
+  color: var(--color-text-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.lede {
+  font: var(--font-lg-normal);
+  color: var(--color-text-secondary);
+  max-width: 540px;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  height: 44px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font: var(--font-base-strong);
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.ctaPrimary:hover {
+  background: var(--color-primary-hover);
+  color: #fff;
+  text-decoration: none;
+}
+
+.linkBtn {
+  font: var(--font-base-strong);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.linkBtn:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 8px;
+  font: var(--font-base-normal);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-mono);
+  font-size: 13px;
+}
+
+.bullets li::before {
+  content: '·';
+  color: var(--color-primary);
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+/* Right — component grid ──────────────────────────── */
+.right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: var(--color-bg-layout);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.tile {
+  background: var(--color-bg-container);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tile1 { grid-column: 1 / 2; }
+.tile2 { grid-column: 2 / 3; }
+.tile3 { grid-column: 1 / 3; }
+.tile4 { grid-column: 1 / 2; grid-row: 4 / 6; }
+.tile5 { grid-column: 2 / 3; }
+.tile6 { grid-column: 2 / 3; gap: 8px; }
+
+/* Stars */
+.stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  margin: 0;
+  font: var(--font-heading-5);
+  color: var(--color-text-heading);
+}
+
+.cardMore {
+  font: var(--font-sm-normal);
+  color: var(--color-link);
+}
+
+.cardSlot {
+  padding: 12px 16px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+/* Input */
+.inputWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: var(--font-sm-normal);
+  color: var(--color-text);
+}
+
+.inputLabel em {
+  color: var(--color-text-tertiary);
+  font-style: normal;
+}
+
+.input {
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font: var(--font-base-normal);
+  color: var(--color-text);
+  background: var(--color-bg-container);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input::placeholder { color: var(--color-text-tertiary); }
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+/* Form */
+.form {
+  display: grid;
+  gap: 10px;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: var(--font-sm-normal);
+  color: var(--color-text);
+}
+
+.link {
+  margin-left: auto;
+  font: var(--font-sm-normal);
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.link:hover { color: var(--color-link-hover); }
+
+.formFooter {
+  font: var(--font-sm-normal);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+/* Button sampler */
+.btnSampler {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Notification */
+.notification {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notifHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notifIcon {
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.notifHead h4 {
+  margin: 0;
+  font: var(--font-heading-5);
+  color: var(--color-text-heading);
+  flex: 1;
+}
+
+.notifClose {
+  background: transparent;
+  border: none;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.notifBody {
+  margin: 0;
+  font: var(--font-sm-normal);
+  color: var(--color-text-secondary);
+}
+
+.notifActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Alert */
+.alert {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+}
+
+.alert-info {
+  background: var(--color-info-bg);
+  border-color: var(--color-info-border);
+}
+.alert-success {
+  background: var(--color-success-bg);
+  border-color: var(--color-success-border);
+}
+.alert-warning {
+  background: var(--color-warning-bg);
+  border-color: var(--color-warning-border);
+}
+.alert-error {
+  background: var(--color-error-bg);
+  border-color: var(--color-error-border);
+}
+
+.alertDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.alert-info .alertDot   { background: var(--color-info); }
+.alert-success .alertDot { background: var(--color-success); }
+.alert-warning .alertDot { background: var(--color-warning); }
+.alert-error .alertDot   { background: var(--color-error); }
+
+.alertBody {
+  font: var(--font-sm-normal);
+  color: var(--color-text);
+}
+
+.alertBody strong {
+  font: var(--font-base-strong);
+}
+
+.alertBody p {
+  margin: 4px 0 0;
+  color: var(--color-text-secondary);
+}

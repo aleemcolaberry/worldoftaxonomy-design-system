@@ -1,0 +1,103 @@
+.section {
+  margin-top: 48px;
+}
+
+.title {
+  margin: 0 0 16px;
+  font: var(--font-heading-3);
+  color: var(--color-text-heading);
+}
+
+.table {
+  width: 100%;
+  background: var(--color-bg-container);
+  border: 1px solid var(--color-split);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font: var(--font-base-normal);
+  table-layout: fixed;
+}
+
+.table thead {
+  background: var(--color-fill-alter);
+}
+
+.table th {
+  text-align: left;
+  padding: 16px;
+  font: var(--font-base-strong);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-split);
+}
+
+.table th:nth-child(1) { width: 22%; }
+.table th:nth-child(2) { width: 10%; }
+.table th:nth-child(3) { width: 22%; }
+.table th:nth-child(4) { width: 46%; }
+
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--color-split);
+  vertical-align: top;
+  color: var(--color-text);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.varName {
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  color: var(--color-text);
+  word-break: break-all;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font: var(--font-sm-normal);
+  border: 1px solid var(--color-border);
+}
+
+.tag-Map {
+  background: var(--color-blue-1);
+  color: var(--color-blue-7);
+  border-color: var(--color-blue-3);
+}
+
+.tag-Alias {
+  background: var(--color-purple-1);
+  color: var(--color-purple-7);
+  border-color: var(--color-purple-3);
+}
+
+.tag-Seed {
+  background: var(--color-cyan-1);
+  color: var(--color-cyan-7);
+  border-color: var(--color-cyan-3);
+}
+
+.value {
+  font-family: var(--font-family-mono);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-split);
+  flex-shrink: 0;
+}
+
+.description {
+  color: var(--color-text-secondary);
+  font: var(--font-base-normal);
+  line-height: 1.6;
+}
