@@ -7,10 +7,10 @@
 A working example of a design system that humans, developers, and AI coding
 agents can all read from. Built end-to-end with **Figma MCP** and **Claude Code**.
 
-[**Watch the explainer**](#watch-the-explainer-2-min) ·
+[**Live site**](https://worldoftaxonomy-design-system1.vercel.app/) ·
+[Watch the explainer](#watch-the-explainer-2-min) ·
 [Figma source](https://www.figma.com/design/RDtxYJx71BmsUWmF6j4pQG/Colaberry-Design-System-V1?node-id=784-2107) ·
 [Brand guide](./BRAND.md) ·
-[Live demo](https://github.com/aleemcolaberry/worldoftaxonomy-design-system) ·
 [Portfolio](https://behance.net/uxaleem)
 
 <br />
@@ -19,6 +19,7 @@ agents can all read from. Built end-to-end with **Figma MCP** and **Claude Code*
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Figma MCP](https://img.shields.io/badge/Figma_MCP-F24E1E?logo=figma&logoColor=white)](https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Dev-Mode-MCP-Server)
+[![Live on Vercel](https://img.shields.io/badge/Live-Vercel-000000?logo=vercel&logoColor=white)](https://worldoftaxonomy-design-system1.vercel.app/)
 [![Built with Claude](https://img.shields.io/badge/Built_with-Claude_Code-D97757)](https://claude.com/claude-code)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](#license)
 
@@ -88,7 +89,7 @@ Figma file  →  Figma MCP  →  Claude Code  →  React component code  →  br
 | 4 | **Translated tokens** into a layered CSS-variable foundation | `palette → neutral → semantic → typography → spacing → radius` |
 | 5 | **Built real React components** wired to those tokens | `Button`, `ButtonGroup`, `PageHeader`, `PageFooter`, `SwatchTable`, `TokenTable` |
 | 6 | **Applied the WorldOfTaxonomy brand** on top — Cyan #06B6D4, Zinc 950, Geist + Geist Mono | `BRAND.md`, `public/brand/`, `public/fonts/` |
-| 7 | **Shipped** — Git → GitHub → Vercel | Standard pipeline |
+| 7 | **Shipped** — Git → GitHub → Vercel, [live here](https://worldoftaxonomy-design-system1.vercel.app/) | Standard pipeline |
 
 Every step ran through **Claude Code** as the executing agent. Design
 decisions, brand direction, and review owned by the designer.
@@ -194,15 +195,21 @@ Open [`http://localhost:5173/`](http://localhost:5173/).
 
 ---
 
-## Production build
+## Production build & deployment
 
 ```bash
 npm run build       # outputs to /dist
 npm run preview     # serves /dist locally
 ```
 
-Static SPA — deploy `/dist` to any static host. The repo is wired for
-one-click Vercel deploy at [vercel.com/new](https://vercel.com/new).
+Static SPA — deploys to any static host.
+
+This project is live on Vercel:
+**[worldoftaxonomy-design-system1.vercel.app](https://worldoftaxonomy-design-system1.vercel.app/)**
+
+Every push to `main` triggers an auto-deploy through the GitHub ↔ Vercel
+integration. Pull requests get their own preview URL for design review
+before merge.
 
 ---
 
