@@ -115,6 +115,14 @@ Where the designer edits. Token names map 1:1 to CSS variables.
 This README + the running docs site + the Figma MCP feed.
 What an AI agent reads to generate UI that matches the system.
 
+<br />
+
+<p align="center">
+  <img src="./docs/images/executable-ui-language.png"
+       alt="WoT AI Design System — the executable UI language. Infinity-loop visualization of the three layers (Design source of truth, Code implementation surface, Agent consumption layer) plus the 90-day evolution roadmap with token-lint, A11y, and visual-regression gates."
+       width="100%" />
+</p>
+
 ---
 
 ## Repo structure
