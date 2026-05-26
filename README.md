@@ -7,7 +7,8 @@
 A working example of a design system that humans, developers, and AI coding
 agents can all read from. Built end-to-end with **Figma MCP** and **Claude Code**.
 
-[**Watch the explainer**](https://youtu.be/IgvbQH588aY) ·
+[**Watch the explainer**](#watch-the-explainer-2-min) ·
+[Figma source](https://www.figma.com/design/RDtxYJx71BmsUWmF6j4pQG/Colaberry-Design-System-V1?node-id=784-2107) ·
 [Brand guide](./BRAND.md) ·
 [Live demo](https://github.com/aleemcolaberry/worldoftaxonomy-design-system) ·
 [Portfolio](https://behance.net/uxaleem)
@@ -37,11 +38,12 @@ agents can all read from. Built end-to-end with **Figma MCP** and **Claude Code*
 
 ### Watch the explainer (2 min)
 
-<a href="https://youtu.be/IgvbQH588aY">
-  <img src="https://img.youtube.com/vi/IgvbQH588aY/maxresdefault.jpg"
-       alt="WoT AI Design System — video explainer"
-       width="640" />
-</a>
+<video src="./docs/videos/ai-assisted-design-proposal.mp4" controls width="720" muted>
+  Your browser does not support the inline video tag.
+  <a href="https://youtu.be/IgvbQH588aY">Watch on YouTube instead.</a>
+</video>
+
+<sub>Also available on <a href="https://youtu.be/IgvbQH588aY">YouTube</a>.</sub>
 
 </div>
 
@@ -80,7 +82,7 @@ Figma file  →  Figma MCP  →  Claude Code  →  React component code  →  br
 
 | # | Step | Tooling |
 |---|---|---|
-| 1 | **Source design** — started from the Ant Design Figma community file (MIT-licensed) | Figma |
+| 1 | **Source design** — [Colaberry-Design-System-V1](https://www.figma.com/design/RDtxYJx71BmsUWmF6j4pQG/Colaberry-Design-System-V1?node-id=784-2107) Figma file (forked from the Ant Design community file, MIT-licensed) | Figma |
 | 2 | **Connected Figma MCP** — Dev Mode MCP server on `localhost:3845/mcp` | Figma Desktop |
 | 3 | **Pulled context for every node** | `get_design_context` · `get_metadata` · `get_screenshot` · `get_variable_defs` |
 | 4 | **Translated tokens** into a layered CSS-variable foundation | `palette → neutral → semantic → typography → spacing → radius` |
