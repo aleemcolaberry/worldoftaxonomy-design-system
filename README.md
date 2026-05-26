@@ -38,7 +38,7 @@ agents can all read from. Built end-to-end with **Figma MCP** and **Claude Code*
 
 ### Watch the explainer (2 min)
 
-<video src="./docs/videos/ai-assisted-design-proposal.mp4" controls width="720" muted>
+<video src="https://github.com/aleemcolaberry/worldoftaxonomy-design-system/raw/main/docs/videos/ai-assisted-design-proposal.mp4" controls width="720" muted>
   Your browser does not support the inline video tag.
   <a href="https://youtu.be/IgvbQH588aY">Watch on YouTube instead.</a>
 </video>
