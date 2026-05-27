@@ -1,95 +1,93 @@
-import PageHeader from '../../components/PageHeader/PageHeader';
-import PageFooter from '../../components/PageFooter/PageFooter';
-import Btn, { type ButtonSize } from '../../components/Button/Button';
+import AppShell from '../../components/AppShell/AppShell';
+import PageIntro from '../../components/PageIntro/PageIntro';
+import ComponentPreview from '../../components/ComponentPreview/ComponentPreview';
+import Btn from '../../components/Button/Button';
 import Group from '../../components/ButtonGroup/ButtonGroup';
-import styles from './ButtonCompact.module.css';
-
-const sizes: ButtonSize[] = ['lg', 'md', 'sm'];
 
 export default function ButtonCompactPage() {
   return (
-    <>
-      <PageHeader
-        breadcrumb={['Style Guide', 'Components', 'Button Compact']}
+    <AppShell>
+      <PageIntro
+        eyebrow="Components"
         title="Button Compact"
-        description="A compact group merges adjacent button borders into a single hairline. Use it for toolbars, segmented controls, or tightly-bound action sets where the choices form one logical unit."
+        lede="A compact group merges adjacent button borders into a single hairline. Use it for toolbars, segmented controls, or tightly-bound action sets where the choices form one logical unit."
       />
-      <main className={styles.main}>
-        <div className={styles.container}>
-          <section className={styles.block} aria-labelledby="item">
-            <h3 id="item" className={styles.blockTitle}>Compact item — anatomy</h3>
-            <p className={styles.note}>
-              Each cell shows a Primary and Default button at one size. In a compact
-              group they share a single border seam.
-            </p>
-            <div className={styles.grid}>
-              <span />
-              <span className={styles.colHead}>Primary</span>
-              <span className={styles.colHead}>Default</span>
-              {sizes.map((s) => (
-                <>
-                  <span key={`l-${s}`} className={styles.rowHead}>{s}</span>
-                  <div className={styles.cell}><Btn variant="primary" size={s}>Button</Btn></div>
-                  <div className={styles.cell}><Btn variant="default" size={s}>Button</Btn></div>
-                </>
-              ))}
-            </div>
-          </section>
 
-          <section className={styles.block} aria-labelledby="horiz">
-            <h3 id="horiz" className={styles.blockTitle}>Compact group — horizontal</h3>
-            <p className={styles.note}>
-              Primary and default styles, three sizes. Internal corners are squared;
-              only the outer corners keep their radius.
-            </p>
-            <div className={styles.row}>
-              {sizes.map((s) => (
-                <div key={s} className={styles.example}>
-                  <span className={styles.label}>{s} · primary</span>
-                  <Group compact>
-                    {['Cut', 'Copy', 'Paste'].map((label) => (
-                      <Btn key={label} variant="primary" size={s}>{label}</Btn>
-                    ))}
-                  </Group>
-                  <span className={styles.label}>{s} · default</span>
-                  <Group compact>
-                    {['Cut', 'Copy', 'Paste'].map((label) => (
-                      <Btn key={label} variant="default" size={s}>{label}</Btn>
-                    ))}
-                  </Group>
-                </div>
-              ))}
-            </div>
-          </section>
+      <ComponentPreview
+        title="Compact horizontal"
+        description="Three actions joined as one unit — outer corners keep their radius, internal seams are squared."
+        code={`<ButtonGroup compact>
+  <Button variant="primary">Cut</Button>
+  <Button variant="primary">Copy</Button>
+  <Button variant="primary">Paste</Button>
+</ButtonGroup>`}
+      >
+        <Group compact>
+          <Btn variant="primary">Cut</Btn>
+          <Btn variant="primary">Copy</Btn>
+          <Btn variant="primary">Paste</Btn>
+        </Group>
+      </ComponentPreview>
 
-          <section className={styles.block} aria-labelledby="vert">
-            <h3 id="vert" className={styles.blockTitle}>Compact group — vertical</h3>
-            <p className={styles.note}>
-              Same compaction logic stacked vertically — for dock-style toolbars
-              or floating side menus.
-            </p>
-            <div className={styles.vertRow}>
-              {sizes.map((s) => (
-                <div key={s} className={styles.vertExample}>
-                  <span className={styles.label}>{s} · primary</span>
-                  <Group orientation="vertical" compact>
-                    {['Up', 'Center', 'Down'].map((label) => (
-                      <Btn key={label} variant="primary" size={s}>{label}</Btn>
-                    ))}
-                  </Group>
-                  <span className={styles.label}>{s} · default</span>
-                  <Group orientation="vertical" compact>
-                    {['Up', 'Center', 'Down'].map((label) => (
-                      <Btn key={label} variant="default" size={s}>{label}</Btn>
-                    ))}
-                  </Group>
-                </div>
-              ))}
-            </div>
-          </section>
+      <ComponentPreview
+        title="Default variant"
+        description="Same compaction over outline buttons — the classic segmented-control look."
+        code={`<ButtonGroup compact>
+  <Button variant="default">Day</Button>
+  <Button variant="default">Week</Button>
+  <Button variant="default">Month</Button>
+  <Button variant="default">Year</Button>
+</ButtonGroup>`}
+      >
+        <Group compact>
+          <Btn variant="default">Day</Btn>
+          <Btn variant="default">Week</Btn>
+          <Btn variant="default">Month</Btn>
+          <Btn variant="default">Year</Btn>
+        </Group>
+      </ComponentPreview>
+
+      <ComponentPreview
+        title="Compact vertical"
+        description="Compaction stacked — dock-style menus or floating side toolbars."
+        code={`<ButtonGroup orientation="vertical" compact>
+  <Button variant="default">Up</Button>
+  <Button variant="default">Center</Button>
+  <Button variant="default">Down</Button>
+</ButtonGroup>`}
+      >
+        <Group orientation="vertical" compact>
+          <Btn variant="default">Up</Btn>
+          <Btn variant="default">Center</Btn>
+          <Btn variant="default">Down</Btn>
+        </Group>
+      </ComponentPreview>
+
+      <ComponentPreview
+        title="Sizes"
+        description="Compact groups respect the child button sizes."
+        code={`<ButtonGroup compact><Button size="sm" variant="default">SM</Button>…</ButtonGroup>
+<ButtonGroup compact><Button size="md" variant="default">MD</Button>…</ButtonGroup>
+<ButtonGroup compact><Button size="lg" variant="default">LG</Button>…</ButtonGroup>`}
+      >
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
+          <Group compact>
+            <Btn size="sm" variant="default">SM</Btn>
+            <Btn size="sm" variant="default">SM</Btn>
+            <Btn size="sm" variant="default">SM</Btn>
+          </Group>
+          <Group compact>
+            <Btn size="md" variant="default">MD</Btn>
+            <Btn size="md" variant="default">MD</Btn>
+            <Btn size="md" variant="default">MD</Btn>
+          </Group>
+          <Group compact>
+            <Btn size="lg" variant="default">LG</Btn>
+            <Btn size="lg" variant="default">LG</Btn>
+            <Btn size="lg" variant="default">LG</Btn>
+          </Group>
         </div>
-      </main>
-      <PageFooter />
-    </>
+      </ComponentPreview>
+    </AppShell>
   );
 }

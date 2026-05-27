@@ -1,0 +1,65 @@
+/* Dark mode overrides — applied when <html> has class="dark".
+   Brand cyan keeps its hex; only neutrals invert. */
+:root.dark {
+  /* Text */
+  --color-text: var(--color-zinc-50);            /* #fafafa */
+  --color-text-secondary: var(--color-zinc-300); /* #d4d4d8 */
+  --color-text-tertiary: var(--color-zinc-400);  /* #a1a1aa */
+  --color-text-quaternary: var(--color-zinc-500); /* #71717a */
+  --color-text-heading: var(--color-zinc-50);
+  --color-text-inverse: var(--color-zinc-900);
+
+  /* Icon */
+  --color-icon: var(--color-zinc-400);
+  --color-icon-hover: var(--color-zinc-50);
+
+  /* Background — layered from deepest to highest elevation. */
+  --color-bg-base: var(--color-zinc-950);
+  --color-bg-container: var(--color-zinc-900);
+  --color-bg-elevated: var(--color-zinc-800);
+  --color-bg-layout: var(--color-zinc-950);
+  --color-bg-subtle: var(--color-zinc-900);
+  --color-bg-dark: var(--color-zinc-950);
+  --color-bg-mask: rgba(0, 0, 0, 0.65);
+  --color-bg-spotlight: var(--color-zinc-50);
+
+  /* Border */
+  --color-border: var(--color-zinc-800);          /* #27272a */
+  --color-border-secondary: var(--color-zinc-700);
+  --color-split: var(--color-zinc-800);
+
+  /* Fill */
+  --color-fill: var(--color-zinc-700);
+  --color-fill-secondary: var(--color-zinc-800);
+  --color-fill-tertiary: var(--color-zinc-800);
+  --color-fill-quaternary: var(--color-zinc-900);
+  --color-fill-alter: var(--color-zinc-900);
+
+  /* Brand — Cyan keeps base, text variants brightened for AA contrast on dark. */
+  --color-primary-bg: rgba(6, 182, 212, 0.12);
+  --color-primary-bg-hover: rgba(6, 182, 212, 0.2);
+  --color-primary-border: var(--color-cyan-800);
+  --color-primary-border-hover: var(--color-cyan-700);
+  --color-primary-text: var(--color-cyan-400);
+  --color-primary-text-hover: var(--color-cyan-300);
+  --color-primary-text-active: var(--color-cyan-500);
+  --color-link: var(--color-cyan-400);
+  --color-link-hover: var(--color-cyan-300);
+  --color-link-active: var(--color-cyan-500);
+
+  /* State backgrounds inset to feel inset, not popping off the page. */
+  --color-success-bg: rgba(16, 185, 129, 0.12);
+  --color-success-border: var(--color-emerald-800);
+  --color-success-text: var(--color-emerald-400);
+
+  --color-warning-bg: rgba(245, 158, 11, 0.12);
+  --color-warning-border: var(--color-amber-800);
+  --color-warning-text: var(--color-amber-400);
+
+  --color-error-bg: rgba(239, 68, 68, 0.12);
+  --color-error-border: var(--color-red-800);
+  --color-error-text: var(--color-red-400);
+
+  /* Focus ring stays brand-cyan but slightly more visible on dark. */
+  --shadow-focus: 0 0 0 3px rgba(6, 182, 212, 0.55);
+}

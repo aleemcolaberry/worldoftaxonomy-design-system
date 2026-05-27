@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import PageHeader from '../../components/PageHeader/PageHeader';
-import PageFooter from '../../components/PageFooter/PageFooter';
+import AppShell from '../../components/AppShell/AppShell';
+import PageIntro from '../../components/PageIntro/PageIntro';
 import Btn from '../../components/Button/Button';
 import Group from '../../components/ButtonGroup/ButtonGroup';
 import styles from './Showcase.module.css';
@@ -99,14 +99,13 @@ function NotificationTile() {
 
 export default function Showcase() {
   return (
-    <>
-      <PageHeader
-        breadcrumb={['Style Guide', 'Showcase']}
-        title="Components at a glance"
-        description="A single page sampling the surface area of the WoT AI Design System — every component shown here is built from the same tokens documented in the rest of the guide."
+    <AppShell>
+      <PageIntro
+        eyebrow="Demos"
+        title="Showcase"
+        lede="Every primitive on a single page — composing the same Buttons, inputs, forms, alerts, and notifications that ship in the system."
       />
-      <main className={styles.main}>
-        <div className={styles.container}>
+      <div className={styles.container}>
           <section className={styles.left}>
             <h2 className={styles.headline}>
               Build with <span className={styles.accent}>WoT primitives</span> from
@@ -169,8 +168,6 @@ export default function Showcase() {
             </div>
           </section>
         </div>
-      </main>
-      <PageFooter />
-    </>
+    </AppShell>
   );
 }

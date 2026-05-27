@@ -1,19 +1,9 @@
-.main {
-  background: var(--color-bg-container);
-  padding: 64px 120px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .row {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 48px;
-  padding: 32px 0;
-  border-bottom: 1px solid var(--color-split);
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .row:last-child {
@@ -23,19 +13,21 @@
 .meta {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .metaLabel {
+  margin: 0 0 4px;
   font: var(--font-heading-5);
   color: var(--color-text-heading);
-  margin: 0;
 }
 
 .metaSize {
-  font: var(--font-sm-normal);
-  color: var(--color-text-secondary);
   margin: 0;
+  font: var(--font-sm-normal);
+  color: var(--color-text-tertiary);
+  font-family: var(--font-family-mono);
+  font-size: 12px;
 }
 
 .samples {
@@ -44,41 +36,40 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   color: var(--color-text);
 }
 
-/* Base */
 .base-normal { font: var(--font-base-normal); }
 .base-strong { font: var(--font-base-strong); }
 .base-underline { font: var(--font-base-normal); text-decoration: underline; }
 .base-delete { font: var(--font-base-normal); text-decoration: line-through; }
 .base-italic { font: var(--font-base-italic); }
 
-/* SM */
 .sm-normal { font: var(--font-sm-normal); }
 .sm-strong { font: var(--font-sm-strong); }
 .sm-underline { font: var(--font-sm-normal); text-decoration: underline; }
 .sm-delete { font: var(--font-sm-normal); text-decoration: line-through; }
 .sm-italic { font: var(--font-sm-italic); }
 
-/* LG */
 .lg-normal { font: var(--font-lg-normal); }
 .lg-strong { font: var(--font-lg-strong); }
 .lg-underline { font: var(--font-lg-normal); text-decoration: underline; }
 .lg-delete { font: var(--font-lg-normal); text-decoration: line-through; }
 .lg-italic { font: var(--font-lg-italic); }
 
-/* XL */
 .xl-normal { font: var(--font-xl-normal); }
 .xl-strong { font: var(--font-xl-strong); }
 .xl-underline { font: var(--font-xl-normal); text-decoration: underline; }
 .xl-delete { font: var(--font-xl-normal); text-decoration: line-through; }
 .xl-italic { font: var(--font-xl-italic); }
 
-/* Headings */
-.h1 { font: var(--font-heading-1); color: var(--color-text); }
-.h2 { font: var(--font-heading-2); color: var(--color-text); }
+.h1 { font: var(--font-heading-1); color: var(--color-text); letter-spacing: -0.02em; }
+.h2 { font: var(--font-heading-2); color: var(--color-text); letter-spacing: -0.015em; }
 .h3 { font: var(--font-heading-3); color: var(--color-text); }
 .h4 { font: var(--font-heading-4); color: var(--color-text); }
 .h5 { font: var(--font-heading-5); color: var(--color-text); }
+
+@media (max-width: 768px) {
+  .row { grid-template-columns: 1fr; }
+}
