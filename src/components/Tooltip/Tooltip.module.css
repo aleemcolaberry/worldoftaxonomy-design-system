@@ -1,0 +1,86 @@
+.anchor {
+  position: relative;
+  display: inline-flex;
+}
+
+.bubble {
+  position: absolute;
+  z-index: 60;
+  padding: 6px 10px;
+  background: var(--color-zinc-900);
+  color: var(--color-zinc-50);
+  border-radius: var(--radius-sm);
+  font: var(--font-sm-normal);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+:root.dark .bubble {
+  background: var(--color-zinc-50);
+  color: var(--color-zinc-900);
+}
+
+.anchor:hover .bubble,
+.anchor:focus-within .bubble {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Tail / arrow */
+.bubble::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+  transform: rotate(45deg);
+}
+
+/* Sides */
+.side-top .bubble {
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+}
+.anchor.side-top:hover .bubble,
+.anchor.side-top:focus-within .bubble {
+  transform: translateX(-50%) translateY(0);
+}
+.side-top .bubble::after { bottom: -4px; left: 50%; margin-left: -4px; }
+
+.side-bottom .bubble {
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+}
+.anchor.side-bottom:hover .bubble,
+.anchor.side-bottom:focus-within .bubble {
+  transform: translateX(-50%) translateY(0);
+}
+.side-bottom .bubble::after { top: -4px; left: 50%; margin-left: -4px; }
+
+.side-left .bubble {
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%) translateX(4px);
+}
+.anchor.side-left:hover .bubble,
+.anchor.side-left:focus-within .bubble {
+  transform: translateY(-50%) translateX(0);
+}
+.side-left .bubble::after { right: -4px; top: 50%; margin-top: -4px; }
+
+.side-right .bubble {
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+}
+.anchor.side-right:hover .bubble,
+.anchor.side-right:focus-within .bubble {
+  transform: translateY(-50%) translateX(0);
+}
+.side-right .bubble::after { left: -4px; top: 50%; margin-top: -4px; }

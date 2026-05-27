@@ -3,6 +3,9 @@ import AppShell from '../../components/AppShell/AppShell';
 import Btn from '../../components/Button/Button';
 import Group from '../../components/ButtonGroup/ButtonGroup';
 import CodeBlock from '../../components/CodeBlock/CodeBlock';
+import Input from '../../components/Input/Input';
+import Checkbox from '../../components/Checkbox/Checkbox';
+import { Notice } from '../../components/Toast/Toast';
 import styles from './Playground.module.css';
 
 interface Preset {
@@ -19,9 +22,10 @@ const presets: Preset[] = [
     prompt: 'Build a sign-in form',
     description: 'A two-field auth form with a primary CTA and a secondary link.',
     preview: <SignInPreview />,
-    code: `<form className="auth-form">
-  <Input label="Email" type="email" />
-  <Input label="Password" type="password" />
+    code: `<form>
+  <Input label="Email" type="email" placeholder="aleem@example.com" />
+  <Input label="Password" type="password" placeholder="••••••••" />
+  <Checkbox label="Remember me" defaultChecked />
   <Button variant="primary" block>Sign in</Button>
   <a href="#forgot">Forgot password?</a>
 </form>`,
@@ -184,14 +188,9 @@ function SignInPreview() {
   return (
     <form className={styles.signIn} onSubmit={(e) => e.preventDefault()}>
       <h3 className={styles.formTitle}>Sign in</h3>
-      <label className={styles.field}>
-        <span>Email</span>
-        <input type="email" placeholder="aleem@example.com" className={styles.fieldInput} />
-      </label>
-      <label className={styles.field}>
-        <span>Password</span>
-        <input type="password" placeholder="••••••••" className={styles.fieldInput} />
-      </label>
+      <Input label="Email" type="email" placeholder="aleem@example.com" />
+      <Input label="Password" type="password" placeholder="••••••••" />
+      <Checkbox label="Remember me" defaultChecked />
       <Btn variant="primary" block size="md">Sign in</Btn>
       <a href="#forgot" className={styles.link}>Forgot password?</a>
     </form>
@@ -244,13 +243,7 @@ function NotifPreview() {
   return (
     <div className={styles.notifStack}>
       {notices.map((n) => (
-        <div key={n.tone} className={`${styles.notif} ${styles[`notif-${n.tone}`]}`}>
-          <span className={styles.notifDot} aria-hidden />
-          <div>
-            <strong>{n.title}</strong>
-            <p>{n.body}</p>
-          </div>
-        </div>
+        <Notice key={n.tone} tone={n.tone} title={n.title} body={n.body} />
       ))}
     </div>
   );
