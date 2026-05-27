@@ -213,6 +213,56 @@ before merge.
 
 ---
 
+## Playground — Claude-powered
+
+The `/playground` route accepts a free-form prompt and asks **Claude Haiku 4.5**
+(via Anthropic's API) to return a JSON tree composed of WoT components.
+A tiny client-side renderer maps that tree to real React elements, so the
+generated UI is the same code the rest of the docs site consumes.
+
+The Anthropic API key never reaches the browser — it lives in a Vercel
+serverless function at [`api/generate.ts`](./api/generate.ts).
+
+### Setup (one-time)
+
+1. Get an Anthropic API key from [console.anthropic.com](https://console.anthropic.com).
+2. On Vercel, go to **Project → Settings → Environment Variables** and add:
+   - **Name:** `ANTHROPIC_API_KEY`
+   - **Value:** your key
+   - **Environments:** Production, Preview, Development (all three).
+3. Redeploy (any push triggers it).
+
+### Local development
+
+Vite's dev server doesn't run serverless functions. Two options:
+
+- **Quick:** push a branch and use the Vercel preview deployment for testing.
+- **Full local:** install [Vercel CLI](https://vercel.com/docs/cli) and run
+  `vercel dev` from the project root. It runs both the Vite app and the
+  serverless function on `http://localhost:3000`. Set `ANTHROPIC_API_KEY`
+  in a local `.env` file or `vercel env pull`.
+
+### How it works
+
+- `src/lib/manifest.ts` — single source of truth describing every component
+  the model is allowed to use. The same file feeds both the system prompt
+  (server) and the renderer's whitelist (client).
+- `src/lib/renderTree.tsx` — maps the JSON tree to React. Unknown tags
+  render as visible "Unknown tag: X" badges; `on*` event handlers are
+  stripped; `href` is sanitized.
+- `api/generate.ts` — POST handler that prepends a cached system prompt
+  (the manifest) to the user prompt and calls Claude. Returns
+  `{ tree, raw, usage, model }` on success.
+
+### Cost notes
+
+The manifest system prompt is ~1.5 k tokens. With prompt caching it bills
+at the cached rate after the first call within a 5-minute window — most
+generations cost ~one short prompt's worth of tokens plus the output
+(~$0.001 each with Haiku at the time of writing).
+
+---
+
 ## What's next — the 30-60-90 roadmap
 
 ### 30 days · Foundation &nbsp;✅ shipped in this repo
@@ -221,14 +271,18 @@ before merge.
 - ✅ WoT brand layer applied (Cyan / Zinc / Geist).
 - ✅ First component: Button (with ButtonGroup + Compact).
 
-### 60 days · Build
-- Expand to 8–10 core components: `Input`, `Select`, `Checkbox`, `Radio`,
-  `Card`, `Modal`, `Tooltip`, `Toast`.
-- Add **Storybook** for component-by-component browsing.
+### 60 days · Build &nbsp;✅ shipped
+- ✅ Eight core components: `Input`, `Select`, `Checkbox`, `Radio`, `Card`,
+  `Modal`, `Tooltip`, `Toast` (with `useToast` + inline `Notice`).
+- ✅ **LLM component manifest** at `src/lib/manifest.ts` — machine-readable
+  description of every prop, feeding both the renderer whitelist and the
+  Claude system prompt.
+- ✅ **Real LLM-powered playground** at `/playground` — prompts hit a
+  Vercel serverless function (`api/generate.ts`) which calls Claude
+  Haiku 4.5 with prompt caching on the manifest.
+- Add **Storybook** for component-by-component browsing (still pending).
 - Extract `src/tokens/` + `src/components/` into a publishable
-  `@worldoftaxonomy/design-system` npm package.
-- **LLM component manifest** — machine-readable JSON describing every prop,
-  state, and import path for agents to consume directly.
+  `@worldoftaxonomy/design-system` npm package (still pending).
 
 ### 90 days · Integrate & govern
 - **MCP server** exposing the manifest so any Claude / agent session can pull
