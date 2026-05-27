@@ -1,5 +1,5 @@
-import PageHeader from '../../components/PageHeader/PageHeader';
-import PageFooter from '../../components/PageFooter/PageFooter';
+import AppShell from '../../components/AppShell/AppShell';
+import PageIntro from '../../components/PageIntro/PageIntro';
 import styles from './FontFamily.module.css';
 
 interface FamilyBlock {
@@ -37,39 +37,34 @@ const families: FamilyBlock[] = [
 
 export default function FontFamily() {
   return (
-    <>
-      <PageHeader
-        breadcrumb={['Style Guide', 'Typography', 'Font Family']}
+    <AppShell>
+      <PageIntro
+        eyebrow="Foundations · Typography"
         title="Font Family"
-        description="The system pairs Geist (sans) with Geist Mono. Both are open source under the SIL OFL 1.1 and ship as variable woff2 inside /public/fonts/."
+        lede="The system pairs Geist (sans) with Geist Mono. Both are open source under the SIL OFL 1.1 and ship as variable woff2 inside /public/fonts/."
       />
-      <main className={styles.main}>
-        <div className={styles.container}>
-          {families.map((family) => (
-            <section key={family.name} className={styles.style}>
-              <header className={styles.styleHeader}>
-                <h2 className={styles.familyName}>{family.name}</h2>
-                <p className={styles.description}>{family.description}</p>
-                <p className={styles.glyphs} style={{ fontFamily: family.fontFamily }}>
-                  ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                  <br />
-                  abcdefghijklmnopqrstuvwxyz
-                  <br />
-                  0123456789 !@#$%^&amp;*()
-                </p>
-              </header>
-              <ul className={styles.samples}>
-                {family.variants.map((v) => (
-                  <li key={v.label} className={styles[v.className]}>
-                    {family.name} {v.label}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </div>
-      </main>
-      <PageFooter />
-    </>
+      {families.map((family) => (
+        <section key={family.name} className={styles.style}>
+          <header className={styles.styleHeader}>
+            <h2 className={styles.familyName}>{family.name}</h2>
+            <p className={styles.description}>{family.description}</p>
+            <p className={styles.glyphs} style={{ fontFamily: family.fontFamily }}>
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ
+              <br />
+              abcdefghijklmnopqrstuvwxyz
+              <br />
+              0123456789 !@#$%^&amp;*()
+            </p>
+          </header>
+          <ul className={styles.samples}>
+            {family.variants.map((v) => (
+              <li key={v.label} className={styles[v.className]}>
+                {family.name} {v.label}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </AppShell>
   );
 }

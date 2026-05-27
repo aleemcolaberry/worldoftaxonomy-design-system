@@ -1,0 +1,118 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 240px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 0 24px;
+  height: 56px;
+  background: var(--color-bg-base);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.brand:hover { text-decoration: none; color: var(--color-text); }
+
+.mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.wordmark {
+  font: var(--font-wordmark);
+  letter-spacing: var(--wordmark-tracking);
+  text-transform: lowercase;
+  color: var(--color-text);
+}
+
+.tag {
+  font: var(--font-sm-normal);
+  color: var(--color-text-tertiary);
+  border-left: 1px solid var(--color-border);
+  padding-left: 10px;
+  margin-left: 2px;
+}
+
+.searchSlot {
+  max-width: 480px;
+  width: 100%;
+}
+
+.searchBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 10px;
+  background: var(--color-bg-container);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-tertiary);
+  font: var(--font-sm-normal);
+  cursor: not-allowed;
+}
+
+.searchBtn span {
+  flex: 1;
+  text-align: left;
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  background: var(--color-fill-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family-mono);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.right {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.iconLink:hover {
+  color: var(--color-text);
+  background: var(--color-fill-tertiary);
+  text-decoration: none;
+}
+
+.iconLink:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    grid-template-columns: 1fr auto;
+  }
+  .searchSlot { display: none; }
+}
