@@ -32,13 +32,21 @@ export const navConfig: NavGroup[] = [
       { to: '/components/button', label: 'Button' },
       { to: '/components/button-group', label: 'Button Group' },
       { to: '/components/button-compact', label: 'Button Compact' },
+      { to: '/components/input', label: 'Input', badge: 'new' },
+      { to: '/components/select', label: 'Select', badge: 'new' },
+      { to: '/components/checkbox', label: 'Checkbox', badge: 'new' },
+      { to: '/components/radio', label: 'Radio', badge: 'new' },
+      { to: '/components/card', label: 'Card', badge: 'new' },
+      { to: '/components/modal', label: 'Modal', badge: 'new' },
+      { to: '/components/toast', label: 'Toast', badge: 'new' },
+      { to: '/components/tooltip', label: 'Tooltip', badge: 'new' },
     ],
   },
   {
     group: 'Demos',
     items: [
       { to: '/showcase', label: 'Showcase' },
-      { to: '/playground', label: 'Playground', badge: 'new' },
+      { to: '/playground', label: 'Playground' },
     ],
   },
 ];
