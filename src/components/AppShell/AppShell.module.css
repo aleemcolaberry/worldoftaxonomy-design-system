@@ -33,6 +33,17 @@
   height: 100%;
 }
 
+/* Landing — no sidebar, full-width marketing canvas. */
+.mainLanding {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+}
+
+.contentLanding {
+  width: 100%;
+}
+
 @media (max-width: 1024px) {
   .main { padding: 40px 32px 64px; }
 }

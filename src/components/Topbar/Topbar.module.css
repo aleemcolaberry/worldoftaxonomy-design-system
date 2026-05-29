@@ -86,28 +86,47 @@
   gap: 8px;
 }
 
-.iconLink {
+.ghLink {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 32px;
+  gap: 8px;
   height: 32px;
+  padding: 0 10px;
   border-radius: var(--radius-md);
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border);
   background: transparent;
-  transition: color 0.15s ease, background-color 0.15s ease;
+  font: var(--font-sm-strong);
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
 
-.iconLink:hover {
+.ghLink:hover {
   color: var(--color-text);
   background: var(--color-fill-tertiary);
   text-decoration: none;
 }
 
-.iconLink:focus-visible {
+.ghLink:focus-visible {
   outline: none;
   box-shadow: var(--shadow-focus);
+}
+
+.ghLabel {
+  font: var(--font-sm-strong);
+}
+
+.ghStars {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding-left: 8px;
+  border-left: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  .ghLabel { display: none; }
 }
 
 @media (max-width: 768px) {

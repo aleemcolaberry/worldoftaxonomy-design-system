@@ -1,40 +1,222 @@
-.section {
-  margin-bottom: 48px;
+/* ───────── Hero ───────── */
+.hero {
+  position: relative;
+  padding: 96px 32px 72px;
+  background:
+    radial-gradient(60% 50% at 50% 0%, var(--color-primary-bg) 0%, transparent 70%);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
 }
 
-.h2 {
-  margin: 0 0 12px;
-  font: var(--font-heading-3);
-  color: var(--color-text-heading);
-  letter-spacing: -0.015em;
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 0%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(70% 60% at 50% 0%, #000 0%, transparent 75%);
+  opacity: 0.4;
+  pointer-events: none;
 }
 
-.body {
-  margin: 0 0 16px;
-  font: var(--font-base-normal);
-  color: var(--color-text-secondary);
-  max-width: 640px;
-}
-
-.cta {
+.heroInner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
   display: flex;
-  gap: 12px;
-  margin-top: 16px;
+  flex-direction: column;
   align-items: center;
+  gap: 24px;
 }
 
-.ctaPrimary,
-.ctaSecondary {
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  background: var(--color-bg-container);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font: var(--font-sm-normal);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.pill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text);
   text-decoration: none;
 }
 
-.grid {
+.pillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.pillArrow {
+  color: var(--color-text-tertiary);
+}
+
+.headline {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: clamp(36px, 6vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-text-heading);
+}
+
+.headlineAccent {
+  color: var(--color-primary);
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 600px;
+  font: var(--font-lg-normal);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.ctaRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 24px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font: var(--font-base-strong);
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.ctaPrimary:hover { background: var(--color-primary-hover); color: #fff; text-decoration: none; }
+
+.ctaGhost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 18px;
+  background: var(--color-bg-container);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font: var(--font-base-strong);
+  text-decoration: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.ctaGhost:hover { border-color: var(--color-primary); text-decoration: none; color: var(--color-text); }
+
+.ghCount {
+  padding-left: 8px;
+  border-left: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ───────── Container for sections below hero ───────── */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 32px 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.sectionLabel {
+  font-family: var(--font-family-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 16px;
+}
+
+/* ───────── Mosaic ───────── */
+.mosaic {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  align-items: start;
 }
 
-@media (max-width: 768px) {
+.tileStat   { grid-column: 1; grid-row: 1; }
+.tileSearch { grid-column: 1; grid-row: 2; }
+.tileNotif  { grid-column: 1; grid-row: 3; }
+.tileForm   { grid-column: 2; grid-row: 1 / span 3; }
+
+.statLabel {
+  display: block;
+  font: var(--font-sm-normal);
+  color: var(--color-text-tertiary);
+}
+
+.statNumber {
+  display: block;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  color: var(--color-text-heading);
+  margin: 4px 0 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.formStack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.btnRow {
+  margin-top: 12px;
+}
+
+.notifStack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 860px) {
+  .mosaic { grid-template-columns: 1fr; }
+  .tileStat, .tileSearch, .tileNotif, .tileForm {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* ───────── Featured grid ───────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
   .grid { grid-template-columns: 1fr; }
 }
 
@@ -87,16 +269,31 @@
   font-size: 18px;
   transition: color 0.15s ease, transform 0.15s ease;
 }
+.card:hover .cardArrow { color: var(--color-primary); transform: translateX(2px); }
 
-.card:hover .cardArrow {
-  color: var(--color-primary);
-  transform: translateX(2px);
+/* ───────── Closing CTA ───────── */
+.closing {
+  text-align: center;
+  padding: 56px 32px;
+  background: var(--color-bg-container);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
-.figure {
-  display: block;
-  max-width: 100%;
-  margin-top: 16px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+.closingTitle {
+  margin: 0;
+  font: var(--font-heading-2);
+  letter-spacing: -0.02em;
+  color: var(--color-text-heading);
+}
+
+.closingBody {
+  margin: 0;
+  max-width: 480px;
+  font: var(--font-base-normal);
+  color: var(--color-text-secondary);
 }

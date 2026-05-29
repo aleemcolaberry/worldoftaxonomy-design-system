@@ -5,20 +5,27 @@ import styles from './AppShell.module.css';
 
 export interface AppShellProps {
   children: ReactNode;
-  /** Set `fluid` for full-bleed pages like the playground. */
+  /** Full-bleed page (e.g. the playground). Keeps the sidebar. */
   fluid?: boolean;
+  /** Show the docs sidebar. Set false for the marketing landing. */
+  sidebar?: boolean;
 }
 
-export default function AppShell({ children, fluid = false }: AppShellProps) {
+export default function AppShell({ children, fluid = false, sidebar = true }: AppShellProps) {
+  const mainClass = !sidebar ? styles.mainLanding : fluid ? styles.mainFluid : styles.main;
+  const contentClass = !sidebar
+    ? styles.contentLanding
+    : fluid
+      ? styles.contentFluid
+      : styles.content;
+
   return (
     <div className={styles.shell}>
       <Topbar />
       <div className={styles.body}>
-        <Sidebar />
-        <main className={fluid ? styles.mainFluid : styles.main}>
-          <div className={fluid ? styles.contentFluid : styles.content}>
-            {children}
-          </div>
+        {sidebar && <Sidebar />}
+        <main className={mainClass}>
+          <div className={contentClass}>{children}</div>
         </main>
       </div>
     </div>

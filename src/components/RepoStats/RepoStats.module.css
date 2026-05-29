@@ -1,0 +1,155 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: var(--color-bg-container);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.statRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statIcon {
+  display: inline-flex;
+  color: var(--color-text-tertiary);
+}
+
+.statValue {
+  font: var(--font-base-strong);
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.statLabel {
+  font: var(--font-sm-normal);
+  color: var(--color-text-tertiary);
+}
+
+/* Language bar */
+.langBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.langBar {
+  display: flex;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--color-fill-tertiary);
+}
+
+.langSeg {
+  height: 100%;
+}
+
+.langLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.langItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: var(--font-sm-normal);
+  color: var(--color-text-secondary);
+}
+
+.langDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.langPct {
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Last commit */
+.commit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-fill-quaternary);
+  text-decoration: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.commit:hover {
+  border-color: var(--color-primary);
+  background: var(--color-bg-container);
+  text-decoration: none;
+}
+
+.commitIcon {
+  display: inline-flex;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.commitMsg {
+  flex: 1;
+  min-width: 0;
+  font: var(--font-sm-normal);
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.commitMeta {
+  font: var(--font-sm-normal);
+  color: var(--color-text-tertiary);
+  font-size: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* States */
+.skeleton .skelRow {
+  height: 16px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--color-fill-tertiary), var(--color-fill-secondary), var(--color-fill-tertiary));
+  background-size: 200% 100%;
+  animation: wot-shimmer 1.2s ease-in-out infinite;
+}
+
+.skelRow:first-child { width: 60%; }
+.skelRow:last-child { width: 85%; }
+
+@keyframes wot-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.errorNote {
+  margin: 0;
+  font: var(--font-sm-normal);
+  color: var(--color-text-tertiary);
+}
+
+.errorNote a {
+  color: var(--color-link);
+}
+
+@media (max-width: 600px) {
+  .commitMeta { display: none; }
+}
